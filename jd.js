@@ -63,7 +63,7 @@
             return;
         }
 
-        if (remainTime < 10) {
+        if (remainTime < 3) {
             clearInterval(timer);
             killer();
         }
