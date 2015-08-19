@@ -38,14 +38,14 @@
                 return alert('Done.');
             }
 
-            if (optimalPrice > limitPrice) {
+            if (currentPrice > limitPrice) {
                 clearInterval(k);
                 return alert('Forget it.');
             }
 
             // KILL
             if (data.bidRecords.length && data.bidRecords[0].username !== me) {
-                kill(optimalPrice);
+                kill(Math.min(optimalPrice, limitPrice));
             }
         }), 500);
     };
@@ -57,7 +57,7 @@
 
         console.log('RemainTime', remainTime, 's, Current Price', currentPrice, 'RMB, Optimal Price', optimalPrice, 'RMB');
 
-        if (optimalPrice > limitPrice) {
+        if (currentPrice > limitPrice) {
             clearInterval(timer);
             alert('Forget it.');
             return;
