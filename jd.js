@@ -31,6 +31,8 @@
             var currentPrice = parseInt(data.currentPrice);
             var remainTime = parseInt(data.remainTime);
             var optimalPrice = currentPrice + 50;
+            
+            window.currentPrice = currentPrice;
 
             // OVER
             if (remainTime === -1) {
@@ -56,6 +58,8 @@
         var optimalPrice = currentPrice + 50;
 
         console.log('RemainTime', remainTime, 's, Current Price', currentPrice, 'RMB, Optimal Price', optimalPrice, 'RMB');
+        
+        window.currentPrice = currentPrice;
 
         if (currentPrice > limitPrice) {
             clearInterval(timer);
